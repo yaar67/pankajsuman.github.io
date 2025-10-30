@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pankaj Suman — Portfolio</title>
+  <meta name="description" content="Photography portfolio of Pankaj Suman — selected works, projects, and contact." />
+  <meta property="og:title" content="Pankaj Suman — Portfolio" />
+  <meta property="og:description" content="Photography portfolio of Pankaj Suman — selected works, projects, and contact." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/photos/cover.jpg" />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="icon" href="/favicon.ico" />
+  <style>
+    :root{
+      --bg:#0b1020; /* deep slate */
+      --card:#121933;
+      --text:#e8ecf8;
+      --muted:#a9b4d0;
+      --accent:#64d2ff;
+      --ring:rgba(100,210,255,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0; padding:0; background:radial-gradient(1200px 800px at 70% -10%, #13224b 0%, #0b1020 45%, #070b16 100%); color:var(--text); font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial, sans-serif}
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1100px; margin:0 auto; padding:28px 20px}
+    header{display:grid; grid-template-columns:1fr auto; align-items:center; gap:16px; padding:20px; border:1px solid #22315f; border-radius:20px; background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)); box-shadow:0 10px 30px rgba(0,0,0,.25)}
+    .brand{display:flex; gap:12px; align-items:center}
+    .logo{width:44px; height:44px; border-radius:12px; background:linear-gradient(145deg,#1a2a5d,#0e183a); display:grid; place-items:center; box-shadow:inset 0 0 0 1px #25356b, 0 6px 20px rgba(0,0,0,.35)}
+    .logo span{font-weight:800; letter-spacing:.5px}
+    .title h1{margin:0; font-size:22px; letter-spacing:.3px}
+    .title p{margin:2px 0 0; color:var(--muted); font-size:14px}
+    nav{display:flex; gap:10px; flex-wrap:wrap}
+    .chip{padding:8px 12px; border-radius:999px; border:1px solid #2a3b72; background:#0d1530; color:#cfe6ff}
+    .chip:hover{box-shadow:0 0 0 4px var(--ring)}
+    .hero{display:grid; grid-template-columns:1.3fr 1fr; gap:24px; margin:28px 0}
+    .card{border:1px solid #22315f; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border-radius:22px; padding:20px; box-shadow:0 10px 30px rgba(0,0,0,.25)}
+    .hero .card{min-height:220px}
+    .hero h2{margin:0 0 6px; font-size:28px}
+    .hero p{margin:8px 0 0; color:var(--muted)}
+    .cta{display:inline-block; margin-top:12px; padding:10px 14px; background:linear-gradient(135deg,#2a7bd6,#64d2ff); color:#041225; font-weight:700; border-radius:12px; border:none}
+    .cta:hover{filter:brightness(1.05)}
+    .gallery{margin:10px 0 30px}
+    .gallery h3{margin:0 0 14px; font-size:22px}
+    .grid{display:grid; gap:10px; grid-template-columns:repeat(2,1fr)}
+    @media (min-width:720px){.grid{grid-template-columns:repeat(3,1fr)}}
+    @media (min-width:1024px){.grid{grid-template-columns:repeat(4,1fr)}}
+    .tile{position:relative; overflow:hidden; border-radius:16px; border:1px solid #22315f; background:#0c1430}
+    .tile img{width:100%; height:100%; object-fit:cover; display:block; aspect-ratio: 1/1; filter:saturate(1.05)}
+    .tile:hover img{transform:scale(1.03); transition:transform .3s ease}
+    .badge{position:absolute; left:10px; top:10px; font-size:12px; background:rgba(4,10,24,.65); border:1px solid #2b3a6b; padding:4px 8px; border-radius:999px}
+    dialog#lightbox{width:min(96vw,1100px); height:min(92vh,800px); border:none; padding:0; background:rgba(10,16,32,.85); box-shadow:0 20px 80px rgba(0,0,0,.6); border-radius:18px}
+    dialog::backdrop{background:rgba(0,0,0,.65)}
+    .lightbox-wrap{position:relative; width:100%; height:100%; display:grid; grid-template-rows:auto 1fr}
+    .lightbox-bar{display:flex; align-items:center; justify-content:space-between; padding:10px 14px; border-bottom:1px solid #22315f}
+    .lightbox-body{position:relative}
+    .lightbox-body img{position:absolute; inset:0; margin:auto; max-width:100%; max-height:100%; width:auto; height:auto;}
+    .btn{background:#0d1530; border:1px solid #2a3b72; color:#cfe6ff; border-radius:10px; padding:8px 12px}
+    .btn:hover{box-shadow:0 0 0 4px var(--ring)}
+    footer{margin:20px 0 40px; color:var(--muted); font-size:14px}
+    .social{display:flex; gap:12px; flex-wrap:wrap}
+    .pill{padding:8px 12px; border-radius:999px; border:1px solid #2a3b72; background:#0d1530}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo"><span>PS</span></div>
+        <div class="title">
+          <h1>Pankaj Suman</h1>
+          <p>Photographer • Designer • MBA @ SJSU</p>
+        </div>
+      </div>
+      <nav>
+        <a class="chip" href="#work">Work</a>
+        <a class="chip" href="#about">About</a>
+        <a class="chip" href="#contact">Contact</a>
+      </nav>
+    </header>
+    <section class="hero">
+      <div class="card">
+        <h2>Capturing moments that feel alive.</h2>
+        <p>Street, portraits, events, and travel. Based in the Bay Area, available worldwide.</p>
+        <a class="cta" href="#work">View portfolio ↓</a>
+      </div>
+      <div class="card">
+        <p style="margin:0 0 8px; color:var(--muted)">Featured clients</p>
+        <div class="social">
+          <span class="pill">SJSU</span>
+          <span class="pill">Local Brands</span>
+          <span class="pill">Community Events</span>
+          <span class="pill">Startups</span>
+        </div>
+        <p style="margin-top:14px; color:var(--muted)">*Replace these with your own.</p>
+      </div>
+    </section>
+    <section id="work" class="gallery">
+      <h3>Latest work</h3>
+      <div class="grid" id="grid">
+        <figure class="tile"><img loading="lazy" src="photos/sample-01.jpg" alt="City sunset over skyline"><figcaption class="badge">City</figcaption></figure>
+        <figure class="tile"><img loading="lazy" src="photos/sample-02.jpg" alt="Portrait in natural light"><figcaption class="badge">Portrait</figcaption></figure>
+        <figure class="tile"><img loading="lazy" src="photos/sample-03.jpg" alt="Street scene, evening rain"><figcaption class="badge">Street</figcaption></figure>
+        <figure class="tile"><img loading="lazy" src="photos/sample-04.jpg" alt="Golden hour at the beach"><figcaption class="badge">Travel</figcaption></figure>
+      </div>
+    </section>
+    <section id="about" class="card">
+      <h3 style="margin:0 0 10px">About</h3>
+      <p>Hi, I’m Pankaj — a Bay Area photographer with a love for candid stories and cinematic color. I shoot portraits, events, and travel. When I’m not behind the camera, I’m designing and studying product & operations as an MBA student.</p>
+    </section>
+    <section id="contact" class="card" style="margin-top:20px">
+      <h3 style="margin:0 0 10px">Contact</h3>
+      <p>For bookings and collaborations, email <a href="mailto:hello@pankajsuman.com">hello@pankajsuman.com</a> or DM me on Instagram.</p>
+      <div class="social" style="margin-top:8px">
+        <a class="pill" href="#">Instagram</a>
+        <a class="pill" href="#">LinkedIn</a>
+        <a class="pill" href="#">Prints</a>
+      </div>
+    </section>
+    <footer>
+      <p>© <span id="year"></span> Pankaj Suman. All rights reserved.</p>
+    </footer>
+  </div>
+  <dialog id="lightbox">
+    <div class="lightbox-wrap">
+      <div class="lightbox-bar">
+        <button class="btn" id="prevBtn" aria-label="Previous">← Prev</button>
+        <button class="btn" id="closeBtn" aria-label="Close">Close</button>
+        <button class="btn" id="nextBtn" aria-label="Next">Next →</button>
+      </div>
+      <div class="lightbox-body"><img id="lightImg" alt="Expanded image" /></div>
+    </div>
+  </dialog>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const grid = document.getElementById('grid');
+    const dialog = document.getElementById('lightbox');
+    const lightImg = document.getElementById('lightImg');
+    const tiles = Array.from(grid.querySelectorAll('img'));
+    let idx = 0;
+    function openAt(i){ idx = i; lightImg.src = tiles[idx].src; dialog.showModal(); }
+    function prev(){ idx = (idx - 1 + tiles.length) % tiles.length; lightImg.src = tiles[idx].src; }
+    function next(){ idx = (idx + 1) % tiles.length; lightImg.src = tiles[idx].src; }
+    grid.addEventListener('click', (e)=>{
+      const img = e.target.closest('img');
+      if(!img) return;
+      const i = tiles.indexOf(img);
+      if(i>-1) openAt(i);
+    });
+    document.getElementById('closeBtn').onclick = ()=> dialog.close();
+    document.getElementById('prevBtn').onclick = prev;
+    document.getElementById('nextBtn').onclick = next;
+    dialog.addEventListener('click', (e)=>{ if(e.target === dialog) dialog.close(); });
+    window.addEventListener('keydown', (e)=>{
+      if(!dialog.open) return;
+      if(e.key==='Escape') dialog.close();
+      if(e.key==='ArrowLeft') prev();
+      if(e.key==='ArrowRight') next();
+    });
+  </script>
+</body>
+</html>
